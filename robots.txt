@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /shuoshuo
+
+Sitemap: https://www.clzczh.top/sitemap.xml

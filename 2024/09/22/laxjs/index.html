@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta name="keywords" content="laxjs使用, 赤蓝紫,前端,动画,二次元">
+  <meta name="description" content="赤蓝紫的博客，记录遇到的技术点，有意思的技术、动效等。一个喜欢二次元的小前端。">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="google-site-verification" content="N2tyqrBMiGbzMX97sCxKpveMRBLdm8zEfKfFo8kitYk" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZXVDMM7YD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-GZXVDMM7YD');
+</script>
+
+
+  <title>laxjs使用 | 赤蓝紫</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+  <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/matery.css">
+  <link rel="stylesheet" type="text/css" href="/css/clz.css">
+  <link rel="stylesheet" type="text/css" href="/css/artitalk.css">
+
+  <link href="/css/an-old-hope.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://www.clzczh.top/" />
+
+  <script src="/libs/jquery/jquery.min.js"></script>
+  <!-- async load function -->
+  <script>
+    function async (u, c) {
+      const scripts = document.getElementsByTagName('script')
+
+      var d = document,
+        t = 'script',
+        o = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+      o.src = u;
+
+      if (c) {
+        o.addEventListener('load', function(e) {
+          c(null, e);
+        }, false);
+      }
+      s.parentNode.insertBefore(o, s);
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+  
+
+        <body>
+          <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="pageContent">
+            <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/avatar.png" class="logo-img" alt="LOGO" aria-label="logo">
+                    
+                    <span class="logo-span">赤蓝紫</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse" aria-label="侧边栏按钮"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact/" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/avatar.png" class="logo-img circle responsive-img" aria-label="logo">
+        
+        <div class="logo-name">赤蓝紫</div>
+        <div class="logo-desc">
+            
+            赤蓝紫的博客，记录遇到的技术点，有意思的技术、动效等。一个喜欢二次元的小前端。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</header>
+
+              
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">laxjs使用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css" />
+<style>
+  #articleContent h1::before,
+  #articleContent h2::before,
+  #articleContent h3::before,
+  #articleContent h4::before,
+  #articleContent h5::before,
+  #articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+  }
+
+  #articleContent :focus {
+    outline: none;
+  }
+
+  .toc-fixed {
+    position: fixed;
+    top: 64px;
+  }
+
+  .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+  }
+
+  .toc-widget .toc-title {
+    padding: 35px 0 15px 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  .toc-widget ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  #toc-content {
+    padding-bottom: 30px;
+    overflow: auto;
+  }
+
+  #toc-content ol {
+    padding-left: 10px;
+  }
+
+  #toc-content ol li {
+    padding-left: 10px;
+  }
+
+  #toc-content .toc-link:hover {
+    color: #42b983;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  #toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+
+    position: absolute;
+    right: 23.5vw;
+    display: block;
+  }
+
+  #toc-content .is-active-link {
+    color: #42b983;
+  }
+
+  #floating-toc-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+  }
+
+  #floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+  }
+
+  #floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+  }
+</style>
+<div class="row">
+  <div id="main-content" class="col s12 m12 l9"><!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%8A%A8%E6%95%88/">
+                                <span class="chip bg-color">动效</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%8A%A8%E6%95%88/" class="post-category">
+                                动效
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-09-22
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="laxjs使用"><a href="#laxjs使用" class="headerlink" title="laxjs使用"></a>laxjs使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>体验一下各种动画库的使用。</p>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>laxjs跟一些常见的动画库(<code>animejs</code>、<code>gsap</code>)的使用方式差异较大。<code>animejs</code>它们主要是获取dom元素，然后设置终点的样式，来进行动画。</p>
+<p>如：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">anime</span>({<br>  <span class="hljs-attr">targets</span>: <span class="hljs-string">'.css-selector-demo .el'</span>,<br>  <span class="hljs-attr">translateX</span>: <span class="hljs-number">250</span><br>});<br></code></pre></td></tr></tbody></table></figure>
+
+<p>而laxjs则是通过<code>addDriver</code>添加驱动，通过添加的驱动来实现动画。</p>
+<blockquote>
+<p>驱动的值是任意的，不过更常见的是通过滚动驱动（laxjs官方介绍就是<code>create smooth &amp; beautiful animations when you scroll</code>）</p>
+</blockquote>
+<p>简单使用：</p>
+<figure class="highlight tsx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">import</span> { useLayoutEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;<br><span class="hljs-keyword">import</span> lax <span class="hljs-keyword">from</span> <span class="hljs-string">"lax.js"</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">"./App.css"</span>;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) {<br>  <span class="hljs-title function_">useLayoutEffect</span>(<span class="hljs-function">() =&gt;</span> {<br>    lax.<span class="hljs-title function_">init</span>();<br><br>    lax.<span class="hljs-title function_">addDriver</span>(<span class="hljs-string">'scrollY'</span>, <span class="hljs-function">() =&gt;</span> {<br>      <span class="hljs-keyword">return</span> <span class="hljs-variable language_">window</span>.<span class="hljs-property">scrollY</span>;<br>    })<br><br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".box"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-attr">translateX</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">200</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">400</span>]<br>        ],<br>        <span class="hljs-attr">translateY</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">200</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">400</span>]<br>        ],<br>        <span class="hljs-attr">opacity</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">200</span>],<br>          [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>]<br>        ]<br>      }<br>    })<br>  });<br><br>  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"box"</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;<br>}<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>效果：<br><img src="https://www.clzczh.top/CLZ_img/images/202409221900956.gif"></p>
+<blockquote>
+<p>lax.addElements第一个参数不支持直接传dom元素，所以在react中没法使用<code>useRef</code>来操作dom元素。</p>
+</blockquote>
+<p>lax使用主要分为三个步骤：</p>
+<ol>
+<li>初始化。<code>lax.init</code></li>
+<li>添加驱动，第一个参数是驱动名称，第二个参数是一个返回数字的函数，该函数每帧都会被调用，值用于动画。<code>lax.addDriver</code></li>
+<li>添加元素，第一个参数是选择器，第二个参数是一个对象，key为驱动名称，value是样式映射的一个对象。</li>
+</ol>
+<p>比如上面的:</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">opacity</span>: [<br>  [<span class="hljs-number">0</span>, <span class="hljs-number">200</span>],<br>  [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>]<br>]<br></code></pre></td></tr></tbody></table></figure>
+<p>就意味着，当<code>window.scrollY</code>为0时，opacity的值为1，<code>window.scrollY</code>为200时，<code>opacity</code>的值为0。opacity跟<code>window.scroolY</code>的关系是线性关系，即当<code>window.scrollY</code>为100时，<code>opacity</code>的值会是<code>0.5</code>。</p>
+<p>当值映射有多个值时，线性关系也会分段。（下面的0-200为一段，200-800为另一段）<br>官方例子：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js">[<span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">800</span>]  <span class="hljs-comment">// Driver value map</span><br>[<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,  <span class="hljs-number">20</span>]   <span class="hljs-comment">// Animation value map</span><br><br><span class="hljs-comment">// Result</span><br><br>| <span class="hljs-title class_">In</span>  | <span class="hljs-title class_">Out</span> |<br>| --- | --- |<br>| <span class="hljs-number">0</span>   | <span class="hljs-number">0</span>   |<br>| <span class="hljs-number">100</span> | <span class="hljs-number">5</span>   |<br>| <span class="hljs-number">200</span> | <span class="hljs-number">10</span>  |<br>| <span class="hljs-number">500</span> | <span class="hljs-number">15</span>  |<br>| <span class="hljs-number">800</span> | <span class="hljs-number">20</span>  |<br></code></pre></td></tr></tbody></table></figure>
+
+<p>还可以使用lax内置的一些常用值：<br><img src="https://www.clzczh.top/CLZ_img/images/202409221957479.png"></p>
+<h2 id="lax官网动效分析"><a href="#lax官网动效分析" class="headerlink" title="lax官网动效分析"></a>lax官网动效分析</h2><p>看完laxjs的官方文档后，对lax的使用也有了一些了解，再加上lax本身就有一个比较简单的官网动效，而且代码并没有经过压缩混淆，所以可以分析一下官网动效，来稍微加深一下对lax的理解（有一些地方可以做了些许调整）</p>
+<p>共同代码（初始化、驱动程序）：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">lax.<span class="hljs-title function_">init</span>();<br><br>lax.<span class="hljs-title function_">addDriver</span>(<span class="hljs-string">'scrollY'</span>, <span class="hljs-function">() =&gt;</span> {<br>  <span class="hljs-keyword">return</span> <span class="hljs-variable language_">window</span>.<span class="hljs-property">scrollY</span>;<br>})<br></code></pre></td></tr></tbody></table></figure>
+
+<h3 id="logo文字"><a href="#logo文字" class="headerlink" title="logo文字"></a>logo文字</h3><p>logo部分的html结构</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"title"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter-area"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{CSvg}</span> /&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter-area"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"l"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{LSvg}</span> /&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter-area"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"z"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{ZSvg}</span> /&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>js</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js">lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">'#c'</span>, {<br>  <span class="hljs-attr">scrollY</span>: {<br>    <span class="hljs-attr">translateX</span>: [[<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight"</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">400</span>]],<br>    <span class="hljs-attr">opacity</span>: [[<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight/2"</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>]]<br>  }<br>})<br>lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">'#l'</span>, {<br>  <span class="hljs-attr">scrollY</span>: {<br>    <span class="hljs-attr">translateX</span>: [[<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight"</span>], [<span class="hljs-number">0</span>, -<span class="hljs-number">400</span>]],<br>    <span class="hljs-attr">opacity</span>: [[<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight/2"</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>]]<br>  }<br>})<br>lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">'#z'</span>, {<br>  <span class="hljs-attr">scrollY</span>: {<br>    <span class="hljs-attr">translateY</span>: [[<span class="hljs-number">0</span>, <span class="hljs-number">100</span>], [ <span class="hljs-number">0</span>, <span class="hljs-number">100</span>]],<br>    <span class="hljs-attr">scale</span>: [[<span class="hljs-number">100</span>, <span class="hljs-string">"screenHeight"</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">10</span>]],<br>    <span class="hljs-attr">opacity</span>: [[<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight/2"</span>, <span class="hljs-string">"screenHeight"</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]],<br>  }<br>})<br></code></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>图片换成在iconfont上切的图片了</p>
+</blockquote>
+<p>C和L的动效比较浅显易懂，开始滚动的时候，透明度逐渐变小，到屏幕一半的时候完全隐藏，与此同时，C向右偏移，L向左偏移。（文字都是<code>fixed</code>定位，所以不会出现往上走的情况）</p>
+<p>Z的动效就有一点点特殊。滚动开始到100像素的时候，Z向下偏移，然后开始逐渐放大。这里的透明度还做了一个分段处理：滚动到一半这个周期，透明度不发生变化，一半之后到首屏消失，透明度逐渐减小为0</p>
+<h3 id="scroll-down文字"><a href="#scroll-down文字" class="headerlink" title="scroll down文字"></a>scroll down文字</h3><p>整体跟logo文字差不多，不过，处理的样式是<code>letter-spacing</code>，跟<code>translate</code>系列不一样，需要额外参数<code>cssUnit: "px"</code>来设置属性</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js">lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".scrolldown"</span>, {<br>  <span class="hljs-attr">scrollY</span>: {<br>    <span class="hljs-string">"letter-spacing"</span>: [<br>      [<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight"</span>],<br>      [<span class="hljs-number">0</span>, <span class="hljs-number">150</span>],<br>      {<br>        <span class="hljs-attr">cssUnit</span>: <span class="hljs-string">"px"</span><br>      }<br>    ],<br>    <span class="hljs-attr">opacity</span>: [[<span class="hljs-string">"screenHeight*0.25"</span>, <span class="hljs-string">"screenHeight*0.75"</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>]],<br>  }<br>})<br></code></pre></td></tr></tbody></table></figure>
+
+<h3 id="漂移文字"><a href="#漂移文字" class="headerlink" title="漂移文字"></a>漂移文字</h3><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js">lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".haha"</span>, {<br>  <span class="hljs-attr">scrollY</span>: {<br>    <span class="hljs-attr">translateX</span>: [[<span class="hljs-string">"elInY"</span>, <span class="hljs-string">"elOutY"</span>], [<span class="hljs-number">0</span>, <span class="hljs-string">"screenWidth-200"</span>]]<br>  }<br>});<br><br>lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".hoho"</span>, {<br>  <span class="hljs-attr">scrollY</span>: {<br>    <span class="hljs-attr">translateX</span>: [[<span class="hljs-string">"elInY"</span>, <span class="hljs-string">"elOutY"</span>], [<span class="hljs-number">0</span>, <span class="hljs-string">"-screenWidth-200"</span>]]<br>  }<br>});<br><br>lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".pass"</span>, {<br>  <span class="hljs-attr">scrollY</span>: {<br>    <span class="hljs-attr">translateX</span>: [[<span class="hljs-string">"elInY"</span>, <span class="hljs-string">"elOutY"</span>], [-<span class="hljs-number">400</span>, <span class="hljs-string">"screenWidth+100"</span>]],<br>    <span class="hljs-attr">skewX</span>: [[<span class="hljs-string">"elInY"</span>, <span class="hljs-string">"elOutY"</span>], [<span class="hljs-number">40</span>, -<span class="hljs-number">40</span>]],<br>  }<br>});<br></code></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>整体还是跟logo文字一样（万变不离其宗🐕），用到了<code>lax</code>内置的一些特殊值。当<code>haha</code>这个元素出现的时候（<code>window.scrollY === elInY</code>），开始偏移，当它消失的时候（<code>window.scrollY === elOutY</code>）时，偏移达到<code>screenWidth-200</code>。<code>pass</code>元素还额外处理了一下<code>skewX</code>属性，会有一个出现到消失，倾斜从向左逐渐变成向右。</p>
+</blockquote>
+<h3 id="旋转纸片"><a href="#旋转纸片" class="headerlink" title="旋转纸片"></a>旋转纸片</h3><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs js">lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".bubble"</span>, {<br>  <span class="hljs-attr">scrollY</span>: {<br>    <span class="hljs-attr">translateY</span>: [<br>      [<span class="hljs-string">"screenHeight/4"</span>, <span class="hljs-string">"screenHeight * 3"</span>],<br>      [<span class="hljs-string">"Math.random()*screenHeight"</span>, <span class="hljs-string">"Math.random()*screenHeight*3"</span>],<br>    ],<br>    <span class="hljs-attr">opacity</span>: [<br>      [<span class="hljs-string">"screenHeight/4"</span>, <span class="hljs-string">"screenHeight/2"</span>],<br>      [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>],<br>    ],<br>    <span class="hljs-attr">translateX</span>: [[<span class="hljs-number">0</span>], [<span class="hljs-string">"index*(screenWidth/25)-50"</span>]],<br>    <span class="hljs-attr">transform</span>: [<br>      [<span class="hljs-number">0</span>, <span class="hljs-number">4000</span>],<br>      [<span class="hljs-number">0</span>, <span class="hljs-string">"(Math.random() + 0.8) * 1000"</span>],<br>      {<br>        <span class="hljs-attr">cssFn</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">val: number</span>) {<br>          <span class="hljs-keyword">return</span> <span class="hljs-string">`rotateX(<span class="hljs-subst">${val % <span class="hljs-number">360</span>}</span>deg)`</span>;<br>        },<br>      },<br>    ],<br>    <span class="hljs-attr">rotate</span>: [<br>      [<span class="hljs-number">0</span>, <span class="hljs-number">4000</span>],<br>      [<span class="hljs-number">0</span>, <span class="hljs-string">"(Math.random() - 0.5) * 1000"</span>],<br>    ],<br>  },<br>});<br></code></pre></td></tr></tbody></table></figure>
+
+<p>这里的动效因为是针对多个元素的，所以上面会有比较多的<code>Math.random()</code></p>
+<p>属性较多，按属性分析：</p>
+<ol>
+<li><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">translateY</span>: [<br>  [<span class="hljs-string">"screenHeight/4"</span>, <span class="hljs-string">"screenHeight * 3"</span>],<br>  [<span class="hljs-string">"Math.random()*screenHeight"</span>, <span class="hljs-string">"Math.random()*screenHeight*3"</span>],<br>],<br></code></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>设置初始值为<code>Math.random()*screenHeight</code>，就避免了所有元素一开始都在同一起跑线，而第二个<code>random</code>则是为了在滚动过程中会有变化，才会有”超车”这种情况发生。</p>
+</blockquote>
+</li>
+<li><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">translateX</span>: [[<span class="hljs-number">0</span>], [<span class="hljs-string">"index*(screenWidth/25)-50"</span>]],<br></code></pre></td></tr></tbody></table></figure></li>
+</ol>
+<blockquote>
+<p>水平线上的位置只有一个值，所以不会有变化。可以通过<code>index</code>来设置初始值，比如当<code>screenWidth</code>为1000px时，第一个元素的<code>translateX</code>为<code>-50</code>，第二个元素的<code>translateX</code>为<code>1*(1000/25)-50 = -10</code>，依次类推。(实际上就是<code>screenWidth/25</code>的一个等差数列)</p>
+</blockquote>
+<ol start="3">
+<li><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"> <span class="hljs-attr">transform</span>: [<br>  [<span class="hljs-number">0</span>, <span class="hljs-number">4000</span>],<br>  [<span class="hljs-number">0</span>, <span class="hljs-string">"(Math.random() + 0.8) * 1000"</span>],<br>  {<br>    <span class="hljs-attr">cssFn</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">val: number</span>) {<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">`rotateX(<span class="hljs-subst">${val % <span class="hljs-number">360</span>}</span>deg)`</span>;<br>    },<br>  },<br>],<br><span class="hljs-attr">rotate</span>: [<br>  [<span class="hljs-number">0</span>, <span class="hljs-number">4000</span>],<br>  [<span class="hljs-number">0</span>, <span class="hljs-string">"(Math.random() - 0.5) * 1000"</span>],<br>],<br></code></pre></td></tr></tbody></table></figure></li>
+</ol>
+<p>这两个都是旋转，区别是<code>rotate</code>是二维的，而<code>rotateX</code>是三维的，<code>rotateX</code>可以有种纸片在正对我们旋转的感觉。上面因为<code>transform</code>只需要额外设置<code>rotateX</code>，所以用到了<code>cssFn</code>处理样式，还加了一下取余做一些优化。</p>
+<h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><p><img src="https://www.clzczh.top/CLZ_img/images/202409222340696.gif"></p>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><p>tsx</p>
+<figure class="highlight tsx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">import</span> { useLayoutEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">"./App.css"</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">CSvg</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"./assets/c.svg"</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">LSvg</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"./assets/l.svg"</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">ZSvg</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"./assets/z.svg"</span>;<br><span class="hljs-keyword">import</span> lax <span class="hljs-keyword">from</span> <span class="hljs-string">"lax.js"</span>;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) {<br>  <span class="hljs-title function_">useLayoutEffect</span>(<span class="hljs-function">() =&gt;</span> {<br>    lax.<span class="hljs-title function_">init</span>();<br><br>    lax.<span class="hljs-title function_">addDriver</span>(<span class="hljs-string">"scrollY"</span>, <span class="hljs-function">() =&gt;</span> {<br>      <span class="hljs-keyword">return</span> <span class="hljs-variable language_">window</span>.<span class="hljs-property">scrollY</span>;<br>    });<br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">"#c"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-attr">translateX</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight"</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">400</span>],<br>        ],<br>        <span class="hljs-attr">opacity</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight/2"</span>],<br>          [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>],<br>        ],<br>      },<br>    });<br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">"#l"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-attr">translateX</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight"</span>],<br>          [<span class="hljs-number">0</span>, -<span class="hljs-number">400</span>],<br>        ],<br>        <span class="hljs-attr">opacity</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight/2"</span>],<br>          [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>],<br>        ],<br>      },<br>    });<br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">"#z"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-attr">translateY</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>],<br>        ],<br>        <span class="hljs-attr">scale</span>: [<br>          [<span class="hljs-number">100</span>, <span class="hljs-string">"screenHeight"</span>],<br>          [<span class="hljs-number">1</span>, <span class="hljs-number">10</span>],<br>        ],<br>        <span class="hljs-attr">opacity</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight/2"</span>, <span class="hljs-string">"screenHeight"</span>],<br>          [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>],<br>        ],<br>      },<br>    });<br><br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".scrolldown"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-string">"letter-spacing"</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"screenHeight"</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">150</span>],<br>          {<br>            <span class="hljs-attr">cssUnit</span>: <span class="hljs-string">"px"</span>,<br>          },<br>        ],<br>        <span class="hljs-attr">opacity</span>: [<br>          [<span class="hljs-string">"screenHeight*0.25"</span>, <span class="hljs-string">"screenHeight*0.75"</span>],<br>          [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>],<br>        ],<br>      },<br>    });<br><br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".bubble"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-attr">translateY</span>: [<br>          [<span class="hljs-string">"screenHeight/4"</span>, <span class="hljs-string">"screenHeight * 3"</span>],<br>          [<span class="hljs-string">"screenHeight"</span>, <span class="hljs-string">"Math.random()*screenHeight*3"</span>],<br>        ],<br>        <span class="hljs-attr">opacity</span>: [<br>          [<span class="hljs-string">"screenHeight/4"</span>, <span class="hljs-string">"screenHeight/2"</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>],<br>        ],<br>        <span class="hljs-attr">translateX</span>: [[<span class="hljs-number">0</span>], [<span class="hljs-string">"index*(screenWidth/25)-50"</span>]],<br>        <span class="hljs-attr">transform</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">4000</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"(Math.random() + 1) * 1000"</span>],<br>          {<br>            <span class="hljs-attr">cssFn</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"><span class="hljs-attr">val</span>: <span class="hljs-built_in">number</span></span>) {<br>              <span class="hljs-keyword">return</span> <span class="hljs-string">`rotateX(<span class="hljs-subst">${val % <span class="hljs-number">360</span>}</span>deg)`</span>;<br>            },<br>          },<br>        ],<br>        <span class="hljs-attr">rotate</span>: [<br>          [<span class="hljs-number">0</span>, <span class="hljs-number">4000</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"(Math.random() - 0.5) * 1000"</span>],<br>        ],<br>      },<br>    });<br><br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".haha"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-attr">translateX</span>: [<br>          [<span class="hljs-string">"elInY"</span>, <span class="hljs-string">"elOutY"</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"screenWidth - 00"</span>],<br>        ],<br>      },<br>    });<br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".hoho"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-attr">translateX</span>: [<br>          [<span class="hljs-string">"elInY"</span>, <span class="hljs-string">"elOutY"</span>],<br>          [<span class="hljs-number">0</span>, <span class="hljs-string">"-screenWidth-200"</span>],<br>        ],<br>      },<br>    });<br>    lax.<span class="hljs-title function_">addElements</span>(<span class="hljs-string">".pass"</span>, {<br>      <span class="hljs-attr">scrollY</span>: {<br>        <span class="hljs-attr">translateX</span>: [<br>          [<span class="hljs-string">"elInY"</span>, <span class="hljs-string">"elOutY"</span>],<br>          [-<span class="hljs-number">400</span>, <span class="hljs-string">"screenWidth+100"</span>],<br>        ],<br>        <span class="hljs-attr">skewX</span>: [<br>          [<span class="hljs-string">"elInY"</span>, <span class="hljs-string">"elOutY"</span>],<br>          [<span class="hljs-number">40</span>, -<span class="hljs-number">40</span>],<br>        ],<br>      },<br>    });<br>  });<br><br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"container"</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"title"</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter-area"</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{CSvg}</span> /&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter-area"</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"l"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{LSvg}</span> /&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter-area"</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"letter"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"z"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{ZSvg}</span> /&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"scrolldown"</span>&gt;</span>scroll down<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubbles"</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble red"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"haha"</span>&gt;</span>哈哈<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"hoho"</span>&gt;</span>吼吼<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"pass"</span>&gt;</span>路过<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  );<br>}<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>css</p>
+<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> {<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">400vh</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#242224</span>;<br>  <span class="hljs-attribute">overflow-x</span>: hidden;<br>}<br><br><span class="hljs-selector-class">.title</span>{<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-direction</span>: column;<br>  <span class="hljs-attribute">align-items</span>: center;<br>  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">100px</span>;<br>}<br><br><span class="hljs-selector-class">.letter-area</span> {<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-direction</span>: column;<br>  <span class="hljs-attribute">align-items</span>: center;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>}<br><br><span class="hljs-selector-class">.letter</span> {<br>  <span class="hljs-attribute">position</span>: fixed;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;<br>}<br><br><span class="hljs-selector-id">#c</span> {<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">100px</span>;<br>}<br><br><span class="hljs-selector-id">#l</span> {<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">300px</span>;<br>}<br><br><span class="hljs-selector-id">#z</span> {<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">500px</span><br>}<br><br><span class="hljs-selector-class">.scrolldown</span> {<br>  <span class="hljs-attribute">position</span>: fixed;<br>  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>  <span class="hljs-attribute">justify-content</span>: center;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>;<br>  <span class="hljs-attribute">text-align</span>: center;<br>}<br><br><span class="hljs-selector-class">.bubbles</span> {<br>  <span class="hljs-attribute">top</span>: -<span class="hljs-number">100vh</span>;<br>  <span class="hljs-attribute">position</span>: fixed;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate3d</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>  <span class="hljs-attribute">z-index</span>: <span class="hljs-number">5</span>;<br>}<br><br><span class="hljs-selector-class">.bubble</span> {<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">140px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">140px</span>;<br>  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;<br>  <span class="hljs-attribute">position</span>: absolute;<br>}<br><br><span class="hljs-selector-class">.bubble</span><span class="hljs-selector-class">.red</span> {<br>  <span class="hljs-attribute">background</span>: <span class="hljs-number">#a94fe4</span>;<br>}<br><br><span class="hljs-selector-class">.bubble</span><span class="hljs-selector-class">.blue</span> {<br>  <span class="hljs-attribute">background</span>: <span class="hljs-number">#68e4f1</span>;<br>}<br><br><span class="hljs-selector-class">.bubble</span><span class="hljs-selector-class">.yellow</span> {<br>  <span class="hljs-attribute">background</span>: <span class="hljs-number">#ffe773</span>;<br>}<br><br><span class="hljs-selector-class">.haha</span> {<br>  <span class="hljs-attribute">position</span>: absolute;<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">150vh</span>;<br>  <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">150px</span>;<br>}<br><br><span class="hljs-selector-class">.hoho</span> {<br>  <span class="hljs-attribute">position</span>: absolute;<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">200vh</span>;<br>  <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">150px</span>;<br>}<br><br><span class="hljs-selector-class">.pass</span> {<br>  <span class="hljs-attribute">position</span>: absolute;<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">270vh</span>;<br>  <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">150px</span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+<p>c.svg</p>
+<figure class="highlight svg"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs svg"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">"1.0"</span> standalone=<span class="hljs-string">"no"</span>?&gt;</span><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">svg</span> <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">"-//W3C//DTD SVG 1.1//EN"</span> <span class="hljs-string">"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">t</span>=<span class="hljs-string">"1726760982830"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 1024 1024"</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.1"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">p-id</span>=<span class="hljs-string">"4421"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#fff"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M786.225 285.8c-125-125-311.6-125-436.6 0s-125 327.6 0 452.6 311.6 125 436.6 0c25-25 65.6-25 90.6 0s25 65.6 0 90.6c-175 175-442.6 175-617.6 0s-175-458.6 0-633.6 442.6-175 617.6 0c25 25 25 65.6 0 90.6s-65.6 25-90.6 0z"</span> <span class="hljs-attr">p-id</span>=<span class="hljs-string">"4422"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>l.svg</p>
+<figure class="highlight svg"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs svg"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">"1.0"</span> standalone=<span class="hljs-string">"no"</span>?&gt;</span><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">svg</span> <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">"-//W3C//DTD SVG 1.1//EN"</span> <span class="hljs-string">"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">t</span>=<span class="hljs-string">"1726761022424"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 1024 1024"</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.1"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">p-id</span>=<span class="hljs-string">"5745"</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"500"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#fff"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M320 64c35.4 0 64 28.6 64 64v704h384c35.4 0 64 28.6 64 64s-28.6 64-64 64H320c-35.4 0-64-28.6-64-64V128c0-35.4 28.6-64 64-64z"</span> <span class="hljs-attr">p-id</span>=<span class="hljs-string">"5746"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>z.svg</p>
+<figure class="highlight svg"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs svg"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">"1.0"</span> standalone=<span class="hljs-string">"no"</span>?&gt;</span><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">svg</span> <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">"-//W3C//DTD SVG 1.1//EN"</span> <span class="hljs-string">"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">t</span>=<span class="hljs-string">"1726761058129"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 1024 1024"</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.1"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">p-id</span>=<span class="hljs-string">"7677"</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"500"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"500"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#fff"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M127.99999 128c0-35.4 28.6-64 64-64h640c24.8 0 47.4 14.4 58 36.8s7.2 49-8.8 68.2L328.59999 832H831.99999c35.4 0 64 28.6 64 64s-28.6 64-64 64H191.99999c-24.8 0-47.4-14.4-58-36.8s-7.2-49 8.8-68.2L695.39999 192H191.99999C156.59999 192 127.99999 163.4 127.99999 128z"</span> <span class="hljs-attr">p-id</span>=<span class="hljs-string">"7678"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br></code></pre></td></tr></tbody></table></figure>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">赤蓝紫</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.clzczh.top/2024/09/22/laxjs/">https://www.clzczh.top/2024/09/22/laxjs/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">赤蓝紫</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%8A%A8%E6%95%88/">
+                                    <span class="chip bg-color">动效</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+  .valine-card {
+    margin: 1.5rem auto;
+  }
+
+  .valine-card .card-content {
+    padding: 20px 20px 5px 20px;
+  }
+
+  #vcomments textarea {
+    resize: none;
+    box-sizing: border-box;
+    background: url("/medias/my_comment_bg.jpg") 100% 100% no-repeat;
+  }
+
+  #vcomments p {
+    margin: 2px 2px 10px;
+    font-size: 1.05rem;
+    line-height: 1.78rem;
+  }
+
+  #vcomments blockquote p {
+    text-indent: 0.2rem;
+  }
+
+  #vcomments a {
+    padding: 0 2px;
+    color: #4cbf30;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  #vcomments img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  #vcomments ol li {
+    list-style-type: decimal;
+  }
+
+  #vcomments ol,
+  ul {
+    display: block;
+    padding-left: 2em;
+    word-spacing: 0.05rem;
+  }
+
+  #vcomments ul li,
+  ol li {
+    display: list-item;
+    line-height: 1.8rem;
+    font-size: 1rem;
+  }
+
+  #vcomments ul li {
+    list-style-type: disc;
+  }
+
+  #vcomments ul ul li {
+    list-style-type: circle;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    border: 0;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments h1 {
+    font-size: 1.85rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+  }
+
+  #vcomments h2 {
+    font-size: 1.65rem;
+    font-weight: bold;
+    line-height: 1.9rem;
+  }
+
+  #vcomments h3 {
+    font-size: 1.45rem;
+    font-weight: bold;
+    line-height: 1.7rem;
+  }
+
+  #vcomments h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  #vcomments h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+  }
+
+  #vcomments h6 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  #vcomments p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  #vcomments hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  #vcomments blockquote {
+    margin: 15px 0;
+    border-left: 5px solid #42b983;
+    padding: 1rem 0.8rem 0.3rem 0.8rem;
+    color: #666;
+    background-color: rgba(66, 185, 131, 0.1);
+  }
+
+  #vcomments pre {
+    font-family: monospace, monospace;
+    padding: 1.2em;
+    margin: 0.5em 0;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.3em;
+    tab-size: 4;
+  }
+
+  #vcomments code {
+    font-family: monospace, monospace;
+    padding: 1px 3px;
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+  }
+
+  #vcomments pre code {
+    font-family: monospace, monospace;
+    padding: 0;
+    color: #e8eaf6;
+    background-color: #272822;
+  }
+
+  #vcomments pre[class*="language-"] {
+    padding: 1.2em;
+    margin: 0.5em 0;
+  }
+
+  #vcomments code[class*="language-"],
+  pre[class*="language-"] {
+    color: #e8eaf6;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+
+  #vcomments b,
+  strong {
+    font-weight: bold;
+  }
+
+  #vcomments dfn {
+    font-style: italic;
+  }
+
+  #vcomments small {
+    font-size: 85%;
+  }
+
+  #vcomments cite {
+    font-style: normal;
+  }
+
+  #vcomments mark {
+    background-color: #fcf8e3;
+    padding: 0.2em;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+  <div class="comment_headling"
+    style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px">
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="vcomments" class="card-content" style="display: grid"></div>
+</div>
+
+<!-- <script src="/libs/valine/av-min.js"></script> -->
+<script>
+  async("/libs/valine/ValineHCLonely.js", function () {
+    new Valine({
+      el: "#vcomments",
+      appId: "2coN91JLNAEdiLdotu8swszK-MdYXbMMI",
+      appKey: "lMPrwDlhyJdnYay6JviS0qKS",
+      notify: "true" === "true",
+      verify: "false" === "true",
+      visitor: "true" === "true",
+      avatar: "identicon",
+      pageSize: "10",
+      lang: 'zh-cn',
+      placeholder: "One Plus One is ?",
+
+      serverURLs: 'https://2con91jl.api.lncldglobal.com',
+
+      requiredFields: ["nick", "mail"],
+      // 设置Bilibili表情包地址
+      // emojiCDN: "//i0.hdslb.com/bfs/emote/",
+      // // 表情title和图片映射
+      // emojiMaps: {
+      //   tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+      //   tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+      //   tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+      //   tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+      //   tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+      //   tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+      //   tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+      //   tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+      //   tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+      //   tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+      //   tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+      //   tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+      //   tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+      //   tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+      //   tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+      //   tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+      //   tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+      //   tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+      //   tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+      //   tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+      //   tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+      //   tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+      //   tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+      //   tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+      //   tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+      //   tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+      //   tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+      //   tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+      //   tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+      //   tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+      //   tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+      //   tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+      //   tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+      //   tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+      //   tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+      //   tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+      //   tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+      //   tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+      //   tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+      //   tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+      //   tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+      //   tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+      //   tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+      //   tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+      //   tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+      //   tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+      //   tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+      //   tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+      //   tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+      //   tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+      //   // ... 更多表情
+      // },
+      
+      master: "6215c7b8691be9bc9e7e783fe8372da6",
+      tagMeta: ["博主", "小伙伴", "访客"],
+      friends: ["7a5b615c3a4fae10cc2dd518b503ef2d"],
+      metaPlaceholder: { nick: "昵称/QQ号", mail: "邮箱" },
+      enableQQ: true,
+      path: window.location.pathname
+    })
+  })
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/03/03/progressive-jpeg/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16_preview.png" class="preview-img responsive-img" alt="图片优化：js 生成渐进式图片">
+                        <img data-src="/medias/featureimages/16.png" class="real-img responsive-img" alt="图片优化：js 生成渐进式图片">
+                        
+                        <span class="card-title">图片优化：js 生成渐进式图片</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-03-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">优化</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/09/01/svg%E4%B8%89%E8%A7%92%E5%AD%97%E4%BD%93%E5%88%87%E6%8D%A2%E5%8A%A8%E6%95%88/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4_preview.png" class="preview-img responsive-img" alt="svg三角形字体切换动效">
+                        <img data-src="/medias/featureimages/4.png" class="real-img responsive-img" alt="svg三角形字体切换动效">
+                        
+                        <span class="card-title">laxjs使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8A%A8%E7%94%BB/">
+                        <span class="chip bg-color">动画</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 赤蓝紫<br />'
+            + '文章作者: 赤蓝紫<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+</div>
+  <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+    <div class="toc-widget card" style="background-color: white">
+      <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+      <div id="toc-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+  <a class="btn-floating btn-large bg-color">
+    <i class="fas fa-list-ul"></i>
+  </a>
+</div>
+
+
+<script>
+  async("/libs/tocbot/tocbot.min.js", function() {
+      $(function () {
+	  tocbot.destroy()
+          tocbot.init({
+              tocSelector: '#toc-content',
+              contentSelector: '#articleContent',
+              headingsOffset: -($(window).height() * 0.4 - 45),
+              collapseDepth: Number('0'),
+              headingSelector: 'h2, h3, h4'
+          });
+
+          // modify the toc link href to support Chinese.
+          let i = 0;
+          let tocHeading = 'toc-heading-';
+          $('#toc-content a').each(function () {
+              $(this).attr('href', '#' + tocHeading + (++i));
+          });
+
+          // modify the heading title id to support Chinese.
+          i = 0;
+          $('#articleContent').children('h2, h3, h4').each(function () {
+              $(this).attr('id', tocHeading + (++i));
+          });
+
+          // Set scroll toc fixed.
+          let tocHeight = parseInt($(window).height() * 0.4 - 64);
+          let $tocWidget = $('.toc-widget');
+          $(window).scroll(function () {
+              let scroll = $(window).scrollTop();
+              /* add post toc fixed. */
+              if (scroll > tocHeight) {
+                  $tocWidget.addClass('toc-fixed');
+              } else {
+                  $tocWidget.removeClass('toc-fixed');
+              }
+          });
+
+          
+          /* 修复文章卡片 div 的宽度. */
+          let fixPostCardWidth = function (srcId, targetId) {
+              let srcDiv = $('#' + srcId);
+              if (srcDiv.length === 0) {
+                  return;
+              }
+
+              let w = srcDiv.width();
+              if (w >= 450) {
+                  w = w + 21;
+              } else if (w >= 350 && w < 450) {
+                  w = w + 18;
+              } else if (w >= 300 && w < 350) {
+                  w = w + 16;
+              } else {
+                  w = w + 14;
+              }
+              $('#' + targetId).width(w);
+          };
+
+          // 切换TOC目录展开收缩的相关操作.
+          const expandedClass = 'expanded';
+          let $tocAside = $('#toc-aside');
+          let $mainContent = $('#main-content');
+          $('#floating-toc-btn .btn-floating').click(function () {
+              if ($tocAside.hasClass(expandedClass)) {
+                  $tocAside.removeClass(expandedClass).hide();
+                  $mainContent.removeClass('l9');
+              } else {
+                  $tocAside.addClass(expandedClass).show();
+                  $mainContent.addClass('l9');
+              }
+              fixPostCardWidth('artDetail', 'prenext-posts');
+          });
+          
+      });
+  })
+</script>
+
+    
+
+</main>
+
+
+
+                <footer class="page-footer bg-color">
+  <!-- 
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #e54d42;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#e54d42'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+     -->
+  <div class="container row center-align" style="margin-bottom: 15px !important;">
+    <div class="col s12 m8 l8 copy-right">
+      Copyright&nbsp;&copy; 
+      <span id="year">2021-2025</span>
+      
+      <span id="year">2021</span>
+      <a href="/about" target="_blank">赤蓝紫</a>
+      |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+      <br />
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">309.2k</span>&nbsp;字      
+      <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
+       
+      <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>
+      
+      <br />
+      
+      <span id="sitetime">载入运行时间...</span>
+      <script>
+        function siteTime() {
+          var seconds = 1000
+          var minutes = seconds * 60
+          var hours = minutes * 60
+          var days = hours * 24
+          var years = days * 365
+          var today = new Date()
+          var startYear = "2021"
+          var startMonth = "6"
+          var startDate = "20"
+          var startHour = "0"
+          var startMinute = "0"
+          var startSecond = "0"
+          var todayYear = today.getFullYear()
+          var todayMonth = today.getMonth() + 1
+          var todayDate = today.getDate()
+          var todayHour = today.getHours()
+          var todayMinute = today.getMinutes()
+          var todaySecond = today.getSeconds()
+          var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond)
+          var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+          var diff = t2 - t1
+          var diffYears = Math.floor(diff / years)
+          var diffDays = Math.floor(diff / days - diffYears * 365)
+          var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+          var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+          var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds)
+          if (startYear == todayYear) {
+            document.getElementById("year").innerHTML = todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          } else {
+            document.getElementById("year").innerHTML = startYear + " - " + todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          }
+        }
+        setInterval(siteTime, 1000)
+      </script>
+      
+      <br />
+      
+      <div class="country-flag">
+      	<a target="_blank" rel="noopener" href="http://s04.flagcounter.com/more/Bm"><img src="https://s04.flagcounter.com/count/Bm/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_9/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+      </div>
+    </div>
+    <div class="col s12 m4 l4 social-link social-statis">
+<a href="https://github.com/clzczhc" target="_blank" aria-label="github"
+    data-position="top" data-delay="50">
+    <i class="fab fa-github"></i>
+</a>
+
+
+
+
+
+<a href="mailto:1926389897@qq.com"  target="_blank" aria-label="email"
+    data-position="top" data-delay="50">
+    <i class="fas fa-envelope-open"></i>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" aria-label="RSS 订阅"
+    data-delay="50">
+    <i class="fas fa-rss"></i>
+</a>
+</div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+                  <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+                    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+                      <script src="/libs/materialize/materialize.min.js"></script>
+                      <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+                      <script src="/libs/aos/aos.js"></script>
+                      <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                      <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                      <script>async("/js/matery.js");</script>
+
+                      <script>async("/js/lazyload.js");</script>
+
+                      <!-- <script src="/js/digitalRain.js"></script> -->
+                      <!-- <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script> -->
+                      <script src="/libs/highlight/highlight.min.js"></script>
+                      <script>
+                        hljs.initHighlightingOnLoad()
+                      </script>
+
+                      <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4ad37b19b8976dd4a39f98611bfe8cf1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+                        <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+                          
+                              
+                                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                                
+                                  
+                                      
+                                          
+                                              
+                                                  
+                                                        
+                                                            
+                                                              <script
+                                                                src="/libs/instantpage/instantpage.js"
+                                                                type="module"></script>
+                                                              
+          </div>
+
+          
+            <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #e54d42;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#e54d42'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+              
+                <script src="/js/jquery.pjax.js"></script>
+                <script src="/js/clz.js"></script>
+
+                <!--动态线条背景-->
+                <script type="text/javascript" color="220,220,220" opacity="0.7" zIndex="-2" count="200"
+                  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        </body>
+
+</html>
